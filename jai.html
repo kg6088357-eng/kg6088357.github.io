@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Seven Months — A Love & Letting Go</title>
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#9aa4b2; --accent:#ff6b6b;
+      --glass: rgba(255,255,255,0.04);
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#071025 0%, #0f1724 100%);color:#e6eef6;line-height:1.5;overflow-x:hidden;}
+
+    /* FADE-IN ANIMATION */
+    .fade {opacity:0;transform:translateY(15px);transition:opacity .9s ease, transform .9s ease;}
+    .fade.show {opacity:1;transform:translateY(0);}
+
+    /* HEART PARTICLES */
+    .heart {
+      position: fixed;
+      top: -10px;
+      color: #ff6b6b;
+      font-size: 14px;
+      animation: fall linear forwards;
+      opacity: 0.8;
+      pointer-events:none;
+    }
+    @keyframes fall {
+      to {transform: translateY(110vh) translateX(-20px); opacity: 0;}
+    }
+
+    .container{max-width:980px;margin:48px auto;padding:20px}
+    header{display:flex;align-items:center;gap:16px}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#ffa07a);display:flex;align-items:center;justify-content:center;font-weight:700;color:#1a0b0b}
+    h1{font-size:clamp(20px,3vw,34px);margin:0}
+    p.lead{color:var(--muted);margin-top:6px}
+
+    .card{background:var(--card);border-radius:14px;padding:18px;margin-top:22px;box-shadow:0 6px 24px rgba(2,6,23,0.6);}
+
+    .hero{display:grid;grid-template-columns:1fr;gap:18px}
+    .hero-quote{font-size:18px;padding:14px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);}
+    .muted{color:var(--muted)}
+
+    .timeline{display:grid;gap:12px;margin-top:12px}
+    .month{display:flex;gap:12px;align-items:flex-start;padding:12px;border-radius:10px;background:var(--glass);border:1px solid rgba(255,255,255,0.03)}
+    .month .num{width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,0.02);display:flex;align-items:center;justify-content:center;font-weight:700}
+    .month h3{margin:0;font-size:16px}
+    .month p{margin:6px 0 0;color:var(--muted);font-size:14px}
+
+    .gallery{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .photo{flex:1 1 calc(33% - 10px);min-width:140px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:12px;}
+
+    .final{margin-top:18px;padding:14px;border-radius:12px;background:linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));}
+    .reveal{display:flex;gap:12px;align-items:center}
+    .btn{background:linear-gradient(90deg,var(--accent),#ff9472);border:none;padding:10px 14px;border-radius:10px;color:#140808;font-weight:700;cursor:pointer}
+
+    footer{margin-top:28px;color:var(--muted);font-size:13px;text-align:center}
+
+    @media (max-width:680px){.container{margin:20px;padding:14px}.gallery .photo{flex-basis:48%}}
+  </style>
+</head>
+<body>
+
+  <!-- HEART PARTICLE CONTAINER -->
+  <div id="heartContainer"></div>
+
+  <main class="container">
+
+    <header class="fade">
+      <div class="logo">7M</div>
+      <div>
+        <h1>Seven Months — A Love & Letting Go</h1>
+        <p class="lead">A quiet site to hold memories, feel the ache, and do the bravest thing: let go with love.</p>
+      </div>
+    </header>
+
+    <section class="card hero fade">
+      <div class="hero-quote">
+        <strong>“For my final act of love I will let her go not out of anger and not out of defeat, but because holding on to her meant losing myself.”</strong>
+        <p class="muted" style="margin-top:8px">This site collects seven months of small memories: the good, the messy, and the reason you choose kindness at the end.</p>
+      </div>
+
+      <div>
+        <h2 style="margin:0 0 8px 0">Timeline — The Seven Months</h2>
+        <div class="timeline">
+
+          <article class="month">
+            <div class="num">1</div>
+            <div>
+              <h3>Month 1 — Beginnings</h3>
+              <p class="muted">First laughs, first messages, the spark of curiosity.</p>
+            </div>
+          </article>
+
+          <article class="month">
+            <div class="num">2</div>
+            <div>
+              <h3>Month 2 — Getting Close</h3>
+              <p class="muted">Small rituals, inside jokes, the first time you felt seen.</p>
+            </div>
+          </article>
+
+          <article class="month">
+            <div class="num">3</div>
+            <div>
+              <h3>Month 3 — Comfort</h3>
+              <p class="muted">Comfortable silences, shared playlists, a place of rest.</p>
+            </div>
+          </article>
+
+          <article class="month">
+            <div class="num">4</div>
+            <div>
+              <h3>Month 4 — Challenges</h3>
+              <p class="muted">First disagreements, learning to hold boundaries.</p>
+            </div>
+          </article>
+
+          <article class="month">
+            <div class="num">5</div>
+            <div>
+              <h3>Month 5 — Deepening</h3>
+              <p class="muted">Vulnerability, promises, and the hope for more.</p>
+            </div>
+          </article>
+
+          <article class="month">
+            <div class="num">6</div>
+            <div>
+              <h3>Month 6 — Strain</h3>
+              <p class="muted">Tensions grow. Things begin to slip.</p>
+            </div>
+          </article>
+
+          <article class="month">
+            <div class="num">7</div>
+            <div>
+              <h3>Month 7 — Letting Go</h3>
+              <p class="muted">Choosing peace over holding on to pain.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ❤️ HEARTFELT MESSAGE CARD -->
+    <section class="card fade">
+      <h2 style="margin-top:0">A Heartfelt Message</h2>
+      <p class="muted">a quiet confession beneath everything</p>
+      <p style="margin-top:10px;font-size:17px;line-height:1.7;">
+        <em>“I loved her in ways I never learned to explain.  
+        Not with grand gestures, not with perfect timing—  
+        but with the quiet kind of love that hopes,  
+        the kind that stays even when it hurts,  
+        the kind that chooses to let go when staying starts to break what’s left of you.  
+        If love is returning someone to the peace they lost,  
+        then maybe this is the first time I ever loved her right.”</em>
+      </p>
+    </section>
+
+   <section class="card fade">
+      <h2 style="margin:0 0 8px 0">Gallery</h2>
+      <p class="muted">my most cherish photos</p>
+
+      <div class="gallery">
+        <div class="photo">
+          <img src="86363ddc-3964-4440-a6ac-654bcc127b02.jfif" style="width:100%;border-radius:8px;">
+        </div>
+
+        <div class="photo">
+          <img src="af8f1ba0-af78-4e28-8c26-a6f3e4e7affc.jfif" style="width:100%;border-radius:8px;">
+        </div>
+
+        <div class="photo">
+          <img src="12cb3051-d4aa-4f18-b24a-ebe22d870f50.jfif" style="width:100%;border-radius:8px;">
+        </div>
+      </div>
+    </section>
+
+    <section class="card final fade">
+      <h2 style="margin-top:0">Final Act — A Letter</h2>
+      <p class="muted">my every lasting love. Click <em>Reveal</em> to read.</p>
+
+      <div class="reveal">
+        <button class="btn" id="revealBtn">Reveal the Letter</button>
+        <button class="btn" id="copyBtn" style="background:linear-gradient(90deg,#6be6ff,#7bd6ff);">Copy</button>
+      </div>
+
+      <div id="letterArea" style="margin-top:12px;display:none;border-radius:10px;padding:12px;background:rgba(255,255,255,0.02);">
+        <p>To her,</p>
+        <p>These seven months were real. They were messy and beautiful; they taught me how to love and how to lose. I have thought long and hard about what would be kindest for both of us. For my final act of love I will let you go not out of anger and not out of defeat, but because holding on to you meant losing myself.</p>
+        <p>The greatest form of love I can give you now is returning you to the person you love, the one I abandoned to keep you. This is not surrender; it is an act of care. I will remember the laughter, the small rituals, the music, and the kindness. I will take responsibility for what I could not keep, and I will learn from it.</p>
+        <p>Go back. Be whole. Find home in the arms that fit you best. I will honor you by honoring what is right for you even if that means stepping away.</p>
+        <p>With love,</p>
+        <p><em>(ken)</em></p>
+      </div>
+    </section>
+
+    <footer class="fade">
+      <small>Made to hold memory.</small>
+    </footer>
+  </main>
+
+  <script>
+    /* HEART FALLING EFFECT */
+    function createHeart(){
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.textContent = "❤";
+      heart.style.left = Math.random()*100 + "vw";
+      heart.style.animationDuration = (4 + Math.random()*4) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(()=>heart.remove(),6000);
+    }
+    setInterval(createHeart, 800);
+
+    /* FADE-IN ON SCROLL */
+    const fades = document.querySelectorAll(".fade");
+    window.addEventListener("scroll", () => {
+      const trigger = window.innerHeight * 0.9;
+      fades.forEach(el=>{
+        if(el.getBoundingClientRect().top < trigger){
+          el.classList.add("show");
+        }
+      });
+    });
+
+    const revealBtn = document.getElementById('revealBtn');
+    const copyBtn = document.getElementById('copyBtn');
+    const letterArea = document.getElementById('letterArea');
+
+    revealBtn.addEventListener('click', ()=>{
+      if(letterArea.style.display === 'none'){
+        letterArea.style.display = 'block';
+        revealBtn.textContent = 'Hide the Letter';
+      } else {
+        letterArea.style.display = 'none';
+        revealBtn.textContent = 'Reveal the Letter';
+      }
+    });
+
+    copyBtn.addEventListener('click', ()=>{
+      const text = letterArea.innerText || '';
+      navigator.clipboard?.writeText(text).then(()=>{
+        copyBtn.textContent = 'Copied';
+        setTimeout(()=> copyBtn.textContent = 'Copy',1200);
+      }).catch(()=>{
+        alert('Copy not supported in this browser.');
+      })
+    });
+  </script>
+
+</body>
+</html>
